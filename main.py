@@ -1,17 +1,20 @@
 import numpy as np
 
-arr = np.array([1,2,3,4,5])
-print(arr.shape) # (5,) -> 모양 형태, 몸매, 체형
+arr = [1,2,3,4]
+print(type(arr)) # list
 
-arr2 = np.array((['a','b','c']))
-print(arr2.shape) #  3,)
+arr1 = np.array(arr)
+print(type(arr1)) # <class 'numpy.ndarray'>
 
-arr3 = np.array([1,2,3,'a','b','c'])
-print(arr3.shape) # (6,)
+# Size
+arr1 = np.array([[1,2,3],[4,5,6]])
+print(arr1.size) # 6 size 몇차원인지 아는데는 도움X
 
-arr4 = np.array([[1,2,3],[4,5,6]])
-print(arr4.shape) # (2, 3) -> 2행 3
+#ndim
+arr1 = np.array([[1,2,3],[4,5,6]])
+print(arr1.ndim) # 차원
 
-arr5 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
-print(arr5.shape) # (3, 4)
-# shape -> 다차원으로 갈 수록 유용해짐
+
+
+
+
