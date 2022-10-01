@@ -1,16 +1,17 @@
-# 샘플 Python 스크립트입니다.
+import numpy as np
 
-# ⌃R을(를) 눌러 실행하거나 내 코드로 바꿉니다.
-# 클래스, 파일, 도구 창, 액션 및 설정을 어디서나 검색하려면 ⇧ 두 번을(를) 누릅니다.
+arr = np.array([1,2,3,4,5])
+print(arr.shape) # (5,) -> 모양 형태, 몸매, 체형
 
+arr2 = np.array((['a','b','c']))
+print(arr2.shape) #  3,)
 
-def print_hi(name):
-    # 스크립트를 디버그하려면 하단 코드 줄의 중단점을 사용합니다.
-    print(f'Hi, {name}')  # 중단점을 전환하려면 ⌘F8을(를) 누릅니다.
+arr3 = np.array([1,2,3,'a','b','c'])
+print(arr3.shape) # (6,)
 
+arr4 = np.array([[1,2,3],[4,5,6]])
+print(arr4.shape) # (2, 3) -> 2행 3
 
-# 스크립트를 실행하려면 여백의 녹색 버튼을 누릅니다.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# https://www.jetbrains.com/help/pycharm/에서 PyCharm 도움말 참조
+arr5 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
+print(arr5.shape) # (3, 4)
+# shape -> 다차원으로 갈 수록 유용해짐
