@@ -15,7 +15,7 @@ ar = np.arange(10, dtype = np.uint32)
 arr1 = ar.astype('float64')
 
 print(np.issubdtype(ar.dtype, np.integer)) # True
-print(np.issubdtype(ar.dtype, np.float)) # False -> 경고발생 np.floating or np.float64로 직접 써야됨
+print(np.issubdtype(ar.dtype, np.float)) # False -> 경고발생 np.floating or np.float64로 직적 써야됨
 print(np.issubdtype(ar.dtype, np.floating)) # False
 
 ar3 = ar.astype(int)
@@ -24,21 +24,3 @@ ar4 = ar.astype(float)
 print(ar3.dtype) #int64
 print(ar4.dtype) #float64
                  # 그냥 int / float 써도 됨
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
