@@ -1,24 +1,25 @@
 import numpy as np
 
-# Broadcasting
+# Broadcasting 비교연산
 
-a = np.arange(5).reshape(5, 1)
-b = np.arange(3)
-print(a + b)
-"""
-[[0 1 2]
- [1 2 3]
- [2 3 4]
- [3 4 5]
- [4 5 6]]
-"""
-# 오류 발생 X shape이 달라 오류발생 같지만 (5, 1) (3,) -> 가능함 5*3으로 같게 브로드캐스팅 가능.
+a = np.array([[1,2,3],[4,5,6]])
+b = np.array([[7,8,3],[1,5,2]])
+c = np.array([7,8,9])
+d = np.array([7,8])
+e = np.array([1,2,3,4])
 
+print(a == b)
+print(a == c)
 """
-이러한 브로드캐스팅에 대한 RULE이 어찌보면 애매하기도 함.
-다소 직관적인 느낌이 있음.
+[[False False  True]
+ [False  True False]]
+ 
+ [[False False False]
+ [False False False]]
+"""
+# 각각의 요소에 대해 비교를 함  shape이 다를 경우 broadcasting을 함. (==, !=, <, >)
 
-1. scala값 연산은 브로드캐스팅 가능.
-2. 차원이 같거나 어느 한쪽의 배열 크기가 열이든 행이 1인 경우
-3. 차원에 대해 축의 길이가 다면 브로드캐스팅 가능.
-"""
+print(a != d)
+print(a == d)
+# 그래서 연산 + < > 비교는 broadcasting이 안되면 에러 발생 근데 == / != 는 출력은 됨.
+# 추후에 오류를 야기할 수 있다고 오류만 뜨고 True/False출력
