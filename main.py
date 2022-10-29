@@ -1,25 +1,30 @@
 import numpy as np
 
-# Broadcasting 비교연산
-
-a = np.array([[1,2,3],[4,5,6]])
-b = np.array([[7,8,3],[1,5,2]])
-c = np.array([7,8,9])
-d = np.array([7,8])
-e = np.array([1,2,3,4])
-
-print(a == b)
-print(a == c)
+# numpy indexing, slicing - 문제
+a = np.arange(1, 26).reshape(5, 5)
+print(a[:3, 1:3])
 """
-[[False False  True]
- [False  True False]]
- 
- [[False False False]
- [False False False]]
+[[ 2  3]
+ [ 7  8]
+ [12 13]]
 """
-# 각각의 요소에 대해 비교를 함  shape이 다를 경우 broadcasting을 함. (==, !=, <, >)
+print(a[:3][1:3])
+"""
+[[ 6  7  8  9 10]
+ [11 12 13 14 15]]
 
-print(a != d)
-print(a == d)
-# 그래서 연산 + < > 비교는 broadcasting이 안되면 에러 발생 근데 == / != 는 출력은 됨.
-# 추후에 오류를 야기할 수 있다고 오류만 뜨고 True/False출력
+위의 2개는 같아 보이지만 다름. 2번째는 a[:3]의 [1:3]을 다시 하는 것임.
+"""
+
+# view와 copy의 차이
+
+"""
+- 기존 리스트처럼 b = a 이런 식은 view임 그렇기에 b를 수정하면 원본 a도 수정이 됨.
+- 성능과 효율성을 위한 것임.
+
+- view가 아닌 b를 a와 같지만 다른 배열로 설정하기 위해서는 copy매서드를 써야함.
+- b = a[x:y].copy()
+- 느릴 수는 있지만 확실한 복제가 가능함.
+"""
+
+
