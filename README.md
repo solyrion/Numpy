@@ -1,2 +1,2 @@
 # Numpy
-Numpy Study
+Numpy / Pandas Study
