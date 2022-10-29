@@ -30,6 +30,7 @@ print(arr)
 
 arr = np.append(arr, np.array([[100], [200]]), axis=1)
 print(arr)
+
 """
 [[  1   2   3   4   5   0 100]
  [  6   7   8   9  10   0 200]]
