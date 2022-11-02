@@ -15,7 +15,7 @@ a = {'강감찬':180, '이순신':185, '을지문덕':190}
 ar2 = pd.Series(a)
 ind = ['홍길동','강감찬','이순신','을지문덕']
 ar1 = pd.Series(a, index = ind) # index 추가 가능.
-print(ar1) # '홍길동'은 a에 없기 때문에 value = NaN
+print(ar1) # '홍길동'은 a에 없기 때문에 value = NaN / dtype = float64로 바뀜.
 
 # Series는 2차원 배열 안됨. 애당초 1차원 배열 자료구조임.
 # a = pd.Series(np.arange(1, 31).reshape(5, 6) -> 오류
