@@ -1,37 +1,27 @@
 import numpy as np
+import pandas as pd
 
-# append 매서드
-# axis = 0은 행 추가 / axis = 1은 열 추가
 
-a = np.array([])
-a = np.append(a, 1) # 이러한 방식으로 append / a에 다시 대입해줘야 append처리됨
-a = np.append(a, np.array([3, 4]))
-# 특이한 점은 [3, 4]를 추가해도 list append와는 다르게 3, 4가 추가됨([3, 4]가 아닌)
+# 대소문자 조심
 
-b = np.empty((3, 3), dtype=int) # 의미없는 숫자로 채운 배열 생성 (dtype 설정가능)
-print(b)
-
-u = np.empty((5, 5))
-print(u.dtype) # float64가 default 값
-
-z = np.empty_like(a, dtype=int)
-print(z) # 그냥 empty만 쓰면 오류 _like하면 인자의 크기와 같게 empty형성
-# empty는 초기화하지 않는다는 점에서 살짝 빠른 장점이 있음
-
-ar = np.ones((5, 5), dtype=int)
-ar = np.append(ar, np.array([[3,4,5,6,7]]), axis = 0) # 행에 추가해줌 (열 개수 맞춰주어야 함)
+ar = pd.Series([1,2,3,-4,5])
+ar2 = pd.Series(np.arange(5))
 print(ar)
+print(type(ar))
 
+print(ar.index) # RangeIndex(start=0, stop=5, step=1) (0 ~ 4까지 1씩)
+print(ar.values) # [ 1  2  3 -4  5]
 
-arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
-addcol = np.zeros((2, 1), int) # 추가할 배열을 미리 설정
-arr = np.append(arr, addcol, axis = 1)
-print(arr)
+ar = pd.Series([1,2,3,-4,5], index = ['a','b','c','d','e'])
+print(ar) # index지정 가능
 
-arr = np.append(arr, np.array([[100], [200]]), axis=1)
-print(arr)
+a = {'a':1, 'b':2, 'c':3}
+ar = pd.Series(a)
 
-"""
-[[  1   2   3   4   5   0 100]
- [  6   7   8   9  10   0 200]]
-"""
+ar.name = "abc 숫자" # series name도 지정가능
+ar.index = ['k','z','j'] # 기존 series의 index크기와 같아야됨 아니면 오류
+print(ar) # 딕셔너리도 index/value 설정가능.
+print(ar[0])
+print(ar['k'])
+print(ar[1:3])
+
