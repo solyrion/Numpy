@@ -27,4 +27,3 @@ print(df.iloc[:, [0, 3, 1]]) # 지정한 순서에 맞춰서 열값 출력 quan 
 # NaN 값 초기화 시키기.
 df = df.fillna(0)
 print(df) # 이런식으로 NaN값 0으로 초기화. df = 해줘야 df가 변경됨. fillna('a') 문자도 가능.
-
